@@ -1,0 +1,39 @@
+{
+  "notes": "Replace endpoint paths with the exact Nigerian Country Specific Endpoints available in your Adjutor API account/docs. Keep at least 2 endpoints per module.",
+  "modules": {
+    "platform_data": [
+      {
+        "name": "pricing",
+        "method": "GET",
+        "path": "/profile/pricing",
+        "expected_status": 200,
+        "expected_message_contains": ""
+      },
+      {
+        "name": "wallet_balance",
+        "method": "GET",
+        "path": "/wallet/balance",
+        "expected_status": 200,
+        "expected_message_contains": ""
+      }
+    ],
+    "validation": [
+      {
+        "name": "bvn_basic_validation",
+        "method": "GET",
+        "path": "/verification/bvn/{bvn}",
+        "path_params": {"bvn": "22222222222"},
+        "expected_status": 200,
+        "expected_message_contains": ""
+      },
+      {
+        "name": "bank_account_validation",
+        "method": "GET",
+        "path": "/verification/bankaccount",
+        "query_params": {"account_number": "0000000000", "bank_code": "044"},
+        "expected_status": 200,
+        "expected_message_contains": ""
+      }
+    ]
+  }
+}
